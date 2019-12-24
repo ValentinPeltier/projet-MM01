@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import 'header.css';
+@import 'footer.css';
+
+@font-face {
+    font-family: 'SuperMarioBros';
+    src: url(assets/fonts/SuperMarioBros.otf);
+}
+
+:root {
+    --yellow: #ffcb05;
+}
+
+html, body {
+    padding: 0;
+	margin: 0;
+	font-family: 'Roboto';
+}
+
+body {
+	margin-top: 121px;
+}
+
+main {
+	min-height: calc(100vh - 121px);
+	background-image: url(assets/images/sky.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+}
+
+main.home {
+	background-image: url(assets/images/background-home.jpg);
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.home-video-container {
+	display: table;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+
+.home-video {
+	background: #ffffff88;
+}
+
+@media screen and (max-width: 768px) {
+	body {
+		margin-top: 66px;
+	}
+}
