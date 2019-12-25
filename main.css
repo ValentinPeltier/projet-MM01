@@ -7,29 +7,49 @@
     src: url(assets/fonts/SuperMarioBros.otf);
 }
 
-:root {
-    --yellow: #ffcb05;
-}
-
-html, body {
-    padding: 0;
-	margin: 0;
-	font-family: 'Roboto';
+html {
+	--yellow: #ffcb05;
+	--green: #00bd00;
+	--sky: #a0e8f5;
+	--placeholder: #ffffff88;
 }
 
 body {
 	margin-top: 121px;
+	background: var(--sky);
+	font-family: 'Roboto';
+	padding: 0;
+	margin: 0;
 }
 
 main {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	max-width: 1280px;
 	min-height: calc(100vh - 121px);
-	background-image: url(assets/images/sky.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: bottom;
+	z-index: -1;
+	overflow-x: hidden;
 }
 
-main.home {
+main::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	max-width: 1280px;
+	height: 700px;
+	background-image: url(assets/images/sky.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	z-index: -1;
+}
+
+main.home::before {
+	top: unset;
+	bottom: 0;
 	background-image: url(assets/images/background-home.jpg);
 }
 
@@ -53,7 +73,7 @@ button {
 }
 
 .home-video {
-	background: #ffffff88;
+	background: var(--placeholder);
 }
 
 @media screen and (max-width: 768px) {

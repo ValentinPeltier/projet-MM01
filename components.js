@@ -54,7 +54,7 @@ header.innerHTML = `
 
 const footer = document.createElement('footer');
 footer.innerHTML = `
-		Valentin Peltier - 2019<br />
+		Valentin Peltier - 2019<br>
 		<a href="credits.html">Crédits</a> - <a href="contact.html">Contact</a>
 `;
 

@@ -104,8 +104,8 @@ header nav .nav-links {
 header nav a {
 	color: #fff;
     font-family: 'SuperMarioBros';
-    font-size: 26px;
-    text-shadow: 0 0 2px black;
+    font-size: 24px;
+    text-shadow: 0 0 2px #000;
     text-decoration: none;
 }
 
@@ -194,7 +194,7 @@ header nav .dropdown .dropdown-content > a {
 
     header nav {
 		height: 0;
-		background: #00bd00;
+		background: var(--green);
         overflow: hidden;
         transition: all .3s;
     }
