@@ -85,7 +85,7 @@ header .top #audio-button .audio-icon:not(.active) {
 header nav {
     position: relative;
     height: 55px;
-    background: url(assets/images/pipe.jpg) repeat-x;
+    background: url(../assets/images/pipe.jpg) repeat-x;
     background-size: 100% 55px;
 }
 

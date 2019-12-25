@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'SuperMarioBros';
-    src: url(assets/fonts/SuperMarioBros.otf);
+    src: url(../assets/fonts/SuperMarioBros.otf);
 }
 
 html {
@@ -15,7 +15,6 @@ html {
 }
 
 body {
-	margin-top: 121px;
 	background: var(--sky);
 	font-family: 'Roboto';
 	padding: 0;
@@ -40,7 +39,7 @@ main::before {
 	width: 100vw;
 	max-width: 1280px;
 	height: 700px;
-	background-image: url(assets/images/sky.png);
+	background-image: url(../assets/images/sky.png);
 	background-repeat: no-repeat;
 	background-position: bottom;
 	z-index: -1;
@@ -49,7 +48,7 @@ main::before {
 main.home::before {
 	top: unset;
 	bottom: 0;
-	background-image: url(assets/images/background-home.jpg);
+	background-image: url(../assets/images/background-home.jpg);
 }
 
 img {
@@ -76,7 +75,7 @@ button {
 }
 
 @media screen and (max-width: 768px) {
-	body {
+	main {
 		margin-top: 66px;
 	}
 }
