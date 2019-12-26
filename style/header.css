@@ -68,7 +68,12 @@ header .top .logo-link {
 header .top #audio-button {
     position: relative;
     font-size: 40px;
-    width: 40px;
+	width: 40px;
+}
+
+header .top #audio-button:hover,
+header .top #audio-button:focus {
+	animation: var(--breath);
 }
 
 header .top #audio-button .audio-icon {
@@ -110,7 +115,8 @@ header nav a {
     text-decoration: none;
 }
 
-header nav a:hover {
+header nav a:hover,
+header nav a:focus {
     background: rgba(0, 0, 0, 0.1);
 }
 
@@ -147,7 +153,10 @@ header nav .dropdown .dropdown-content {
 	transition: all .3s;
 }
 
-header nav .dropdown:hover .dropdown-content {
+header nav .dropdown:hover .dropdown-content,
+header nav .dropdown .dropdown-content.active,
+header nav .dropdown > a:hover + .dropdown-content,
+header nav .dropdown > a:focus + .dropdown-content {
 	transform: translateX(-50%) scaleY(1);
 }
 
@@ -226,7 +235,8 @@ header nav .dropdown .dropdown-content > a {
 		transition: none;
 	}
 
-	header nav .dropdown:hover .dropdown-content {
+	header nav .dropdown:hover .dropdown-content,
+	header nav .dropdown:focus .dropdown-content {
 		height: max-content;
 	}
 }

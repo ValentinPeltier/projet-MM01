@@ -12,6 +12,7 @@ html {
 	--green: #00bd00;
 	--sky: #a0e8f5;
 	--placeholder: #ffffff88;
+	--breath: breath 2s infinite;
 }
 
 body {
@@ -23,10 +24,10 @@ body {
 
 main {
 	position: relative;
-	display: block;
 	margin: 121px auto 0 auto;
-	max-width: 1280px;
-	min-height: calc(100vh - 121px);
+	width: 1280px;
+	max-width: 100%;
+	min-height: calc(100vh - 121px - 138px);
 	overflow-x: hidden;
 }
 
@@ -45,10 +46,17 @@ main::before {
 	z-index: -1;
 }
 
-main.home::before {
+main#home::before {
 	top: unset;
 	bottom: 0;
 	background-image: url(../assets/images/background-home.jpg);
+}
+
+.page-content {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	max-width: calc(100% - 20px);
 }
 
 img {
@@ -61,21 +69,117 @@ button {
     border: none;
     padding: 0;
     margin: 0;
-    cursor: pointer;
+	cursor: pointer;
+	font-size: 1em;
 }
 
-.home-video-container {
-	display: table;
+.button {
+	background: var(--yellow);
+	border: 2px solid #000;
+	padding: 8px 20px;
+}
+
+/****************/
+/***** Home *****/
+/****************/
+
+#home .video-button {
+	display: block;
+	margin: 60px auto 0 auto;
+	font-size: 1.1em;
+	animation: var(--breath);
+}
+
+#home .video-button i {
+	margin-left: 4px;
+	font-size: 0.8em;
+}
+
+#home .video-container {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	margin: 0 auto;
-	padding-top: 50px;
+	z-index: 1;
 }
 
-.home-video {
+#home .video-container.active {
+	display: block;
+}
+
+#home .video-container .video-overlay {
+	position: fixed;
+	background: #00000088;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+#home .video-container .video-margin {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 500px;
+	max-width: calc(100vw - 20px);
+	margin: 0 auto;
+}
+
+#home .video-container .video-ratio {
+	position: relative;
+	width: 100%;
+	left: 0;
+	top: 0;
+	padding-bottom: 56.25%; /* to keep a 16:9 ratio. See https://stackoverflow.com/a/10441480/6466340 */
+}
+
+#home .video-container iframe {
+	position: absolute;
 	background: var(--placeholder);
+	width: 100%;
+	height: 100%;
+}
+
+#home .video-container .close-button {
+	position: absolute;
+	top: -10px;
+	right: 0;
+	transform: translateY(-100%);
+	background: var(--yellow);
+	border: 2px solid #000;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+#home .video-container .video iframe {
+	width: 100%;
+	height: 100%;
+}
+
+#home .secret-link {
+	position: absolute;
+	bottom: 367px;
+	left: calc(50% - 146px);
+	display: inline-block;
+	height: 60px;
+	width: 60px;
 }
 
 @media screen and (max-width: 768px) {
 	main {
 		margin-top: 66px;
+		min-height: calc(100vh - 66px - 138px);
+	}
+}
+
+@keyframes breath {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.08);
 	}
 }
