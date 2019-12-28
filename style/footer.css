@@ -23,9 +23,9 @@ footer::before {
 footer .mario-run {
 	position: absolute;
 	bottom: 0;
-	left: -100px;
-	height: 100px;
-	animation: mario-run 20s infinite linear;
+	left: -80px;
+	height: 80px;
+	animation: mario-run 30s infinite linear;
 	animation-delay: 2s;
 }
 
