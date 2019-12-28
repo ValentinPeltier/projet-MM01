@@ -3,8 +3,8 @@
 @import 'footer.css';
 
 @font-face {
-	font-family: 'SuperMarioBros';
-	font-display: swap;
+	font-family: SuperMarioBros;
+	font-display: fallback;
     src: url(../assets/fonts/SuperMarioBros.otf);
 }
 
@@ -12,7 +12,7 @@ html {
 	--yellow: #ffcb05;
 	--green: #00bd00;
 	--sky: #a0e8f5;
-	--placeholder: #ffffff88;
+	--placeholder-color: #ffffff88;
 	--breath: breath 2s infinite;
 }
 
@@ -32,6 +32,11 @@ button {
 	font-size: 1em;
 }
 
+h1 {
+	font-family: SuperMarioBros;
+	font-weight: normal;
+}
+
 img {
     max-height: 100%;
     max-width: 100%;
@@ -41,7 +46,7 @@ main {
 	position: relative;
 	margin: 121px auto 0 auto;
 	width: 1280px;
-	max-width: 100%;
+	max-width: calc(100% - 20px);
 	min-height: calc(100vh - 121px - 138px);
 	overflow-x: hidden;
 }
@@ -66,6 +71,10 @@ main#home::before {
 	background-image: url(../assets/images/background-home.jpg);
 }
 
+p {
+	text-align: justify;
+}
+
 .button {
 	background: var(--yellow);
 	border: 2px solid #000;
@@ -73,10 +82,23 @@ main#home::before {
 }
 
 .page-content {
-	display: block;
-	margin: 0 auto;
+	margin: 0 auto 20px auto;
+	text-align: center;
+}
+
+.video-ratio {
+	position: relative;
 	width: 100%;
-	max-width: calc(100% - 20px);
+	padding-bottom: 56.25%; /* to keep a 16:9 ratio. See https://stackoverflow.com/a/10441480/6466340 */
+}
+
+.video-ratio > iframe {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--placeholder-color);
 }
 
 @media screen and (max-width: 768px) {
@@ -96,7 +118,7 @@ main#home::before {
 	}
 
 	50% {
-		transform: scale(1.08);
+		transform: scale(1.1);
 	}
 }
 
@@ -117,7 +139,7 @@ main#home::before {
 }
 
 #home .video-container {
-	display: none;
+	display: block;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -125,10 +147,14 @@ main#home::before {
 	height: 100%;
 	margin: 0 auto;
 	z-index: 1;
+	opacity: 0;
+	visibility: hidden;
 }
 
 #home .video-container.active {
-	display: block;
+	visibility: visible;
+	opacity: 1;
+	transition: all .3s;
 }
 
 #home .video-container .video-overlay {
@@ -148,21 +174,6 @@ main#home::before {
 	margin: 0 auto;
 }
 
-#home .video-container .video-ratio {
-	position: relative;
-	width: 100%;
-	left: 0;
-	top: 0;
-	padding-bottom: 56.25%; /* to keep a 16:9 ratio. See https://stackoverflow.com/a/10441480/6466340 */
-}
-
-#home .video-container iframe {
-	position: absolute;
-	background: var(--placeholder);
-	width: 100%;
-	height: 100%;
-}
-
 #home .video-container .close-button {
 	position: absolute;
 	top: -10px;
@@ -174,11 +185,6 @@ main#home::before {
 	cursor: pointer;
 }
 
-#home .video-container .video iframe {
-	width: 100%;
-	height: 100%;
-}
-
 #home .secret-link {
 	position: absolute;
 	bottom: 367px;
@@ -186,4 +192,13 @@ main#home::before {
 	display: inline-block;
 	height: 60px;
 	width: 60px;
+}
+
+/****************/
+/*** Gameplay ***/
+/****************/
+
+#gameplay .video-container {
+	max-width: 800px;
+	margin: auto;
 }
