@@ -213,8 +213,13 @@ header nav .dropdown .dropdown-content > a {
         height: calc(100vh - 66px);
 	}
 
+	header.active + main {
+		overflow: hidden;
+	}
+
 	header nav .nav-links {
 		display: block;
+		overflow-y: auto;
 	}
 
 	header nav .link,
