@@ -1,7 +1,7 @@
 const header = document.createElement('header');
 header.innerHTML = `
 	<div class="top">
-		<img src="assets/images/mario-head.png" class="mario-head" />
+		<img src="assets/images/mario-head.png" class="mario-head" alt="Mario" />
 		<button id="menu-button">
 			<div></div>
 			<div></div>
@@ -9,7 +9,7 @@ header.innerHTML = `
 		</button>
 
 		<a href="index.html" class="logo-link">
-			<img src="assets/images/logo.svg" />
+			<img src="assets/images/logo.svg" alt="Logo New Super Mario Bros." />
 		</a>
 
 		<button id="audio-button">
@@ -54,7 +54,7 @@ header.innerHTML = `
 
 const footer = document.createElement('footer');
 footer.innerHTML = `
-		<img src="assets/images/run.webp" class="mario-run">
+		<img src="assets/images/run.webp" class="mario-run" alt="Mario">
 		Valentin Peltier - 2019<br>
 		<a href="credits.html">Crédits</a> - <a href="contact.html">Contact</a>
 `;
