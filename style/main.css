@@ -13,6 +13,8 @@ html {
 	--green: #00bd00;
 	--sky: #a0e8f5;
 	--placeholder-color: #ffffff88;
+	--card-color: #ffffffa1;
+	--radio: #aaa;
 	--breath: breath 2s infinite;
 }
 
@@ -38,6 +40,7 @@ h1 {
 }
 
 img {
+	display: block;
     max-height: 100%;
     max-width: 100%;
 }
@@ -75,10 +78,32 @@ p {
 	text-align: justify;
 }
 
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"] + .radio-placeholder {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background: var(--radio);
+	border-radius: 50%;
+	margin: 3px 4px 0 0;
+}
+
+input[type="radio"]:checked + .radio-placeholder {
+	background: var(--yellow);
+}
+
 .button {
 	background: var(--yellow);
 	border: 2px solid #000;
 	padding: 8px 20px;
+}
+
+.card {
+	background: var(--card-color);
+	box-shadow: 0 2px 5px #0004;
 }
 
 .page-content {
@@ -201,4 +226,62 @@ p {
 #gameplay .video-container {
 	max-width: 800px;
 	margin: auto;
+}
+
+/****************/
+/**** Quizz *****/
+/****************/
+
+#quizz #quizz-questions-container {
+	overflow: hidden;
+	max-width: 600px;
+	margin: 0 auto;
+	transition: all .3s;
+}
+
+#quizz #quizz-questions {
+	position: relative;
+	left: 0;
+	transition: all .3s;
+}
+
+#quizz .question {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	text-align: left;
+	padding: 30px;
+}
+
+#quizz .question h2 {
+	margin-top: 0;
+}
+
+#quizz .question label {
+	display: block;
+}
+
+#quizz .question .correct-answer {
+	color: var(--green);
+	font-weight: bold;
+}
+
+#quizz .quizz-footer {
+	text-align: right;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+#quizz .quizz-footer #quizz-page {
+	margin: 14px 0 10px 0;
+}
+
+#quizz .quizz-footer #quizz-result-container {
+	display: none;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+#quizz .quizz-footer #quizz-button-reset {
+	margin-top: 14px;
 }

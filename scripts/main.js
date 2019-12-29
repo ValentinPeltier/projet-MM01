@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const videoButton = document.querySelector('#home .video-button');
 	const videoOverlay = document.querySelector('#home .video-overlay');
 	const videoCloseButton = document.querySelector('#home .video-container .close-button');
-console.log(videoOverlay);
+
     if(audioButton) {
         audioButton.onclick = toggleAudio;
     }
