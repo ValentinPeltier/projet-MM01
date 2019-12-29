@@ -70,8 +70,10 @@ const setAnswer = (entryIndex, answerIndex) => {
 };
 
 const checkAnswers = () => {
+	const resultImage = document.getElementById('quizz-result-image');
 	const result = document.getElementById('quizz-result');
 
+	let image = null;
 	let score = quizzEntries.reduce((previous, current, entryIndex) => {
 		const answer = quizzState.answers.find((e, i) => i === entryIndex);
 		return previous + (answer === current.correct ? 1 : 0);
@@ -80,25 +82,31 @@ const checkAnswers = () => {
 
 	if(score > 90) {
 		comment = 'Félicitations !';
+		image = '90.png';
 	}
 	else if(score > 70) {
 		comment = 'Bien joué.';
+		image = '70.png';
 	}
 	else if(score > 50) {
 		comment = 'Pas trop mal.';
+		image = '50.png';
 	}
 	else if(score > 30) {
-		comment = 'Peut mieux faire...';
+		comment = 'Vous pouvez mieux faire...';
+		image = '30.png';
 	}
 	else {
 		comment = 'Vous avez déjà joué au jeu ?';
+		image = '0.png';
 	}
 
+	resultImage.src = `assets/images/quizz/${image}`;
 	result.innerText = `Vous avez ${score}% de bonnes réponses. ${comment}`;
 
 	// Show correct answers
 	quizzEntries.forEach((entry, i) => {
-		const answer = document.querySelector(`#quizz input[name="question${i}"][value="${entry.correct}"] + div + span`);
+		const answer = document.querySelector(`input[name="question${i}"][value="${entry.correct}"] + div + span`);
 		answer.classList.add('correct-answer');
 	});
 
@@ -117,16 +125,17 @@ const resetQuizz = () => {
 	updatePage();
 
 	// Reset correct answers
-	document.querySelectorAll('#quizz input[name^="question"] + div + span').forEach((answer) => {
+	document.querySelectorAll('input[name^="question"] + div + span').forEach((answer) => {
 		answer.classList.remove('correct-answer');
 	});
 
 	// Reset radio inputs
-	document.querySelectorAll('#quizz input[name^="question"]').forEach((radioInput) => {
+	document.querySelectorAll('input[name^="question"]').forEach((radioInput) => {
 		radioInput.checked = false;
 	});
 
 	// Reset result
+	document.getElementById('quizz-result-image').src = '';
 	document.getElementById('quizz-result').innerText = '';
 
 	// Hide result container

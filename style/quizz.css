@@ -50,8 +50,26 @@
 	display: none;
 	padding: 20px;
 	margin-top: 20px;
+	min-height: 150px;
+}
+
+.quizz-footer #quizz-result-image {
+	float: left;
+	height: 150px;
+	margin-right: 40px;
 }
 
 .quizz-footer #quizz-button-reset {
 	margin-top: 14px;
+}
+
+@media screen and (max-width: 768px) {
+	.quizz-footer #quizz-result-container {
+		text-align: center;
+	}
+
+	.quizz-footer #quizz-result-image {
+		float: unset;
+		margin: 0 auto 20px auto;
+	}
 }
