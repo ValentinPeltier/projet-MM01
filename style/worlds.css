@@ -1,0 +1,17 @@
+/****************/
+/**** Worlds ****/
+/****************/
+
+p {
+	text-align: center;
+}
+
+.world-card {
+	max-width: 750px;
+	margin: 30px auto 0 auto;
+	padding-top: 10px;
+}
+
+.world-card h2 {
+	margin: 0 0 10px 0;
+}
