@@ -1,0 +1,77 @@
+/****************/
+/***** Home *****/
+/****************/
+
+main::before {
+	top: unset;
+	bottom: 138px;
+	background-image: url(../assets/images/background-home.jpg);
+}
+
+.video-button {
+	display: block;
+	margin: 60px auto 0 auto;
+	font-size: 1.1em;
+	animation: var(--breath);
+}
+
+.video-button i {
+	margin-left: 4px;
+	font-size: 0.8em;
+}
+
+.video-container {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	z-index: 1;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.video-container.active {
+	visibility: visible;
+	opacity: 1;
+	transition: all .3s;
+}
+
+.video-container .video-overlay {
+	position: fixed;
+	background: #00000088;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.video-container .video-margin {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 800px;
+	max-width: calc(100vw - 20px);
+	margin: 0 auto;
+}
+
+.video-container .close-button {
+	position: absolute;
+	top: -10px;
+	right: 0;
+	transform: translateY(-100%);
+	background: var(--yellow);
+	border: 2px solid #000;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+.secret-link {
+	position: absolute;
+	bottom: 367px;
+	left: calc(50% - 146px);
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+}

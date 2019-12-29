@@ -1,0 +1,57 @@
+/****************/
+/**** Quizz *****/
+/****************/
+
+#quizz-questions-container {
+	overflow: hidden;
+	max-width: 600px;
+	margin: 0 auto;
+	transition: all .3s;
+}
+
+#quizz-questions {
+	position: relative;
+	left: 0;
+	transition: all .3s;
+}
+
+.question {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	text-align: left;
+	padding: 30px;
+}
+
+.question h2 {
+	margin-top: 0;
+}
+
+.question label {
+	display: block;
+}
+
+.question .correct-answer {
+	color: var(--green);
+	font-weight: bold;
+}
+
+.quizz-footer {
+	text-align: right;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.quizz-footer #quizz-page {
+	margin: 14px 0 10px 0;
+}
+
+.quizz-footer #quizz-result-container {
+	display: none;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.quizz-footer #quizz-button-reset {
+	margin-top: 14px;
+}
