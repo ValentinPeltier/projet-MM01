@@ -102,7 +102,7 @@ const checkAnswers = () => {
 	}
 
 	resultImage.src = `assets/images/quizz/${image}`;
-	result.innerText = `Vous avez ${score}% de bonnes réponses. ${comment}`;
+	result.innerHTML = `Vous avez ${score}% de bonnes réponses.<br />${comment}`;
 
 	// Show correct answers
 	quizzEntries.forEach((entry, i) => {
