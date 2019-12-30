@@ -1,0 +1,44 @@
+/****************/
+/** Characters **/
+/****************/
+
+.character {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 700px;
+	padding: 20px;
+	margin: 0 auto 20px auto;
+}
+
+.character:nth-child(2n + 1) {
+	flex-direction: row-reverse;
+}
+
+.character img {
+	max-width: 200px;
+	max-height: 300px;
+}
+
+.character:nth-child(2n) img {
+	margin-right: 30px;
+}
+
+.character:nth-child(2n + 1) img {
+	margin-left: 30px;
+}
+
+.character .description {
+	width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+	.character {
+		flex-direction: column !important;
+	}
+
+	.character img {
+		margin: 0 auto 20px auto !important;
+	}
+}
