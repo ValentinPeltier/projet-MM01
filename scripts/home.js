@@ -1,5 +1,5 @@
 const setVideoContainer = (toggle, state) => {
-	const videoContainer = document.querySelector('#home .video-container');
+	const videoContainer = document.querySelector('.video-container');
 
 	if(videoContainer) {
 		if(toggle) {
@@ -15,9 +15,9 @@ const setVideoContainer = (toggle, state) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-	const videoButton = document.querySelector('#home .video-button');
-	const videoOverlay = document.querySelector('#home .video-overlay');
-	const videoCloseButton = document.querySelector('#home .video-container .close-button');
+	const videoButton = document.querySelector('.video-button');
+	const videoOverlay = document.querySelector('.video-overlay');
+	const videoCloseButton = document.querySelector('.video-container .close-button');
 
 	if(videoButton) {
 		videoButton.onclick = () => setVideoContainer(false, true);
