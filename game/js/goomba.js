@@ -120,7 +120,7 @@
 
   Goomba.prototype.bump = function() {
     sounds.kick.play();
-    this.sprite.img = 'sprites/enemyr.png';
+    this.sprite.img = 'game/sprites/enemyr.png';
     this.flipping = true;
     this.pos[1] -= 1;
     this.vel[0] = 0;

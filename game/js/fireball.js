@@ -8,7 +8,7 @@
 
     Mario.Entity.call(this, {
       pos: pos,
-      sprite: new Mario.Sprite('sprites/items.png', [96, 144], [8,8], 5, [0,1,2,3]),
+      sprite: new Mario.Sprite('game/sprites/items.png', [96, 144], [8,8], 5, [0,1,2,3]),
       hitbox: [0,0,8,8]
     });
   }

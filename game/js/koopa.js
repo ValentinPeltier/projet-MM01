@@ -35,9 +35,9 @@
     }
 
     if (this.left) {
-      this.sprite.img = 'sprites/enemy.png';
+      this.sprite.img = 'game/sprites/enemy.png';
     } else {
-      this.sprite.img = 'sprites/enemyr.png';
+      this.sprite.img = 'game/sprites/enemyr.png';
     }
 
     if (this.pos[0] - vX > 336) { //if we're too far away, do nothing.
@@ -63,7 +63,7 @@
           this.sprite = level.koopaSprite();
           this.hitbox = [2,8,12,24]
           if (this.left) {
-            this.sprite.img = 'sprites/enemyr.png';
+            this.sprite.img = 'game/sprites/enemyr.png';
             this.vel[0] = 0.5;
             this.left = false;
           } else {
