@@ -9,7 +9,6 @@
 	align-items: center;
 	max-width: 700px;
 	padding: 20px;
-	margin: 0 auto 20px auto;
 }
 
 .character:nth-child(2n + 1) {

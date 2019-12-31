@@ -108,6 +108,7 @@ input[type="radio"]:checked + .radio-placeholder {
 }
 
 .card {
+	margin: 0 auto 40px auto;
 	background: var(--card-color);
 	box-shadow: 0 2px 5px #0004;
 }
@@ -192,6 +193,12 @@ input[type="radio"]:checked + .radio-placeholder {
 	width: 100%;
 	height: 100%;
 	background: var(--placeholder-color);
+}
+
+@media screen and (max-width: 1280px) {
+	main::before {
+		left: 0;
+	}
 }
 
 @media screen and (max-width: 768px) {
