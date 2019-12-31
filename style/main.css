@@ -12,7 +12,7 @@ html {
 	--yellow: #ffcb05;
 	--green: #00bd00;
 	--sky: #a0e8f5;
-	--placeholder-color: #ffffff88;
+	--placeholder-color: #ffffff8c;
 	--card-color: #ffffffa1;
 	--radio: #aaa;
 	--breath: breath 2s infinite;
@@ -32,6 +32,18 @@ button {
     margin: 0;
 	cursor: pointer;
 	font-size: 1em;
+}
+
+button i {
+	font-size: 0.8em;
+}
+
+button.right-icon i {
+	margin-left: 4px;
+}
+
+button.left-icon i {
+	margin-right: 4px;
 }
 
 h1 {
@@ -105,10 +117,72 @@ input[type="radio"]:checked + .radio-placeholder {
 	text-align: center;
 }
 
+#video-container {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	z-index: 1;
+	opacity: 0;
+	visibility: hidden;
+}
+
+#video-container.active {
+	visibility: visible;
+	opacity: 1;
+	transition: all .3s;
+}
+
+#video-container .video-overlay {
+	position: fixed;
+	background: #00000088;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+#video-container .video-margin {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 800px;
+	max-width: calc(100vw - 20px);
+	margin: 0 auto;
+}
+
+#video-container .close-button {
+	position: absolute;
+	top: -10px;
+	right: 0;
+	transform: translateY(-100%);
+	background: var(--yellow);
+	border: 2px solid #000;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
 .video-ratio {
 	position: relative;
 	width: 100%;
 	padding-bottom: 56.25%; /* to keep a 16:9 ratio. See https://stackoverflow.com/a/10441480/6466340 */
+}
+
+#video-container .video-ratio::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100px;
+	height: 100px;
+	border: 10px solid transparent;
+	border-top: 10px solid #fff;
+	border-radius: 50%;
+	animation: spin-center 1.4s linear infinite;
 }
 
 .video-ratio > iframe {
@@ -138,5 +212,15 @@ input[type="radio"]:checked + .radio-placeholder {
 
 	50% {
 		transform: scale(1.1);
+	}
+}
+
+@keyframes spin-center {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
 	}
 }
