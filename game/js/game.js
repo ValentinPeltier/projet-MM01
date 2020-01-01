@@ -24,7 +24,7 @@ var player = new Mario.Player([0,0]);
 canvas.width = 762;
 canvas.height = 720;
 ctx.scale(3,3);
-document.getElementsByTagName('main')[0].appendChild(canvas);
+document.body.appendChild(canvas);
 
 //viewport
 var vX = 0,
@@ -42,7 +42,6 @@ resources.load([
   'game/sprites/enemyr.png',
 ]);
 
-resources.on
 resources.onReady(init);
 var level;
 var sounds;

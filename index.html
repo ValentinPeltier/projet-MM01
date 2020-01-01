@@ -11,6 +11,7 @@
 
         <script src="https://kit.fontawesome.com/85302b6107.js" crossorigin="anonymous"></script>
 		<script src="scripts/main.js"></script>
+		<script src="scripts/home.js"></script>
     </head>
     <body>
 		<main>
@@ -19,9 +20,25 @@
 					Voir le trailer
 					<i class="fas fa-play"></i>
 				</button>
+
+				<button class="button game-button right-icon" id="game-button">
+					Jouer à Super Mario Bros.
+					<i class="fas fa-gamepad"></i>
+				</button>
+
+				<a href="secrets.html" class="secret-link"></a>
 			</div>
 
-			<a href="secrets.html" class="secret-link"></a>
+			<div id="game-container">
+				<div id="game-overlay"></div>
+
+				<div class="game">
+					<div id="game-close-button" title="Fermer">
+						<i class="fas fa-times"></i>
+					</div>
+					<iframe src="" width="768" height="720" frameborder="0"></iframe>
+				</div>
+			</div>
 		</main>
 
 		<script src="scripts/components.js"></script>

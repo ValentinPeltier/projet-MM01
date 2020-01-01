@@ -2,8 +2,13 @@
 /***** Game *****/
 /****************/
 
+html, body {
+	margin: 0;
+}
+
 canvas {
 	display: block;
-	width: 762;
-	margin: 20px auto;
+	width: 762px;
+	height: 720px;
+	margin: 0 auto;
 }
