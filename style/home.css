@@ -75,3 +75,9 @@ main::before {
 	padding: 0;
 	border: 0;
 }
+
+@media screen and (max-width: 1080px) {
+	#game-button {
+		display: none;
+	}
+}
