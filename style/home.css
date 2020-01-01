@@ -8,6 +8,11 @@ main::before {
 	background-image: url(../assets/images/background-home.jpg);
 }
 
+.page-content > *:not(.secret-link) {
+	position: relative;
+	z-index: 1;
+}
+
 .video-button {
 	display: block;
 	margin: 60px auto 0 auto;

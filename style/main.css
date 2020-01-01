@@ -64,6 +64,7 @@ main {
 	max-width: calc(100% - 20px);
 	min-height: calc(100vh - 121px - 138px);
 	overflow-x: hidden;
+	z-index: 0;
 }
 
 main::before {
