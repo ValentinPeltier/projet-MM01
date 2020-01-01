@@ -80,6 +80,19 @@ main::before {
 	z-index: -1;
 }
 
+noscript {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #f00;
+	color: #fff;
+	font-size: 2em;
+	font-weight: bold;
+	padding: 40px;
+	z-index: 99;
+}
+
 p {
 	text-align: justify;
 }
