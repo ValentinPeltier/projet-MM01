@@ -28,19 +28,27 @@ const videoKeydownHandler = (event) => {
 	}
 };
 
-const setVideoContainer = (state, videoId) => {
-	const videoContainer = document.getElementById('video-container');
+const setVideoContainer = (id, state, videoId) => {
+	const videoContainer = document.getElementById(`video-container-${id}`);
 
 	if(videoContainer) {
+		const videoIframe = document.querySelector(`#video-container-${id} iframe`);
+
 		if(state) {
-			document.querySelector('#video-container iframe').src = `https://www.youtube.com/embed/${videoId}`;
+			// Set src if it has not been loaded yet
+			const videoSource = `https://www.youtube.com/embed/${videoId}?enablejsapi=1`;
+			if(videoIframe.src !== videoSource) {
+				videoIframe.src = videoSource;
+			}
+
 			videoContainer.classList.add('active');
 
 			// Handle escape key
 			window.addEventListener('keydown', videoKeydownHandler, { passive: true });
 		}
 		else {
-			document.querySelector('#video-container iframe').src = '';
+			// Pause the video and hide the container
+			videoIframe.contentWindow.postMessage(`{"event":"command","func":"pauseVideo","args":""}`, '*');
 			videoContainer.classList.remove('active');
 			window.removeEventListener('keydown', videoKeydownHandler, { passive: true });
 		}
@@ -78,16 +86,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Create video container if needed
 	const videoButtons = document.querySelectorAll('.video-button');
+	const main = document.getElementsByTagName('main')[0];
 
-	if(videoButtons.length) {
+	videoButtons.forEach((videoButton, i) => {
 		const videoContainer = document.createElement('div');
-		videoContainer.id = 'video-container';
+		videoContainer.id = `video-container-${i}`;
+		videoContainer.classList.add('video-container');
 		videoContainer.innerHTML = `
-			<div class="video-overlay" onclick="setVideoContainer(false)"></div>
+			<div class="video-overlay" onclick="setVideoContainer(${i}, false)"></div>
 
 			<div class="video-margin">
 				<div class="video-ratio">
-					<div class="close-button" title="Fermer" onclick="setVideoContainer(false)">
+					<div class="close-button" title="Fermer" onclick="setVideoContainer(${i}, false)">
 						<i class="fas fa-times"></i>
 					</div>
 
@@ -101,11 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			</div>
 		`;
 
-		const main = document.getElementsByTagName('main')[0];
-		main.parentNode.insertBefore(videoContainer, main.nextSibling);
-	}
+		videoButton.onclick = () => setVideoContainer(i, true, videoButton.getAttribute('data-video'));
 
-	videoButtons.forEach((videoButton) => {
-		videoButton.onclick = () => setVideoContainer(true, videoButton.getAttribute('data-video'));
+		main.parentNode.insertBefore(videoContainer, main.nextSibling);
 	});
 });
