@@ -103,6 +103,7 @@ input[type="radio"] {
 }
 
 input[type="radio"] + .radio-placeholder {
+	position: relative;
 	display: inline-block;
 	width: 1em;
 	height: 1em;
@@ -113,6 +114,9 @@ input[type="radio"] + .radio-placeholder {
 
 input[type="radio"]:checked + .radio-placeholder {
 	background: var(--yellow);
+	border: 2px solid #000;
+	border-radius: 50%;
+	box-sizing: border-box;
 }
 
 .button {
