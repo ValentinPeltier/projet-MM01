@@ -38,7 +38,7 @@ main::before {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 2;
+	z-index: 1;
 }
 
 #game-container #game-overlay {
@@ -52,7 +52,31 @@ main::before {
 	z-index: -1;
 }
 
-#game-container .game {
+#game-container .game-info {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 100vw;
+	box-sizing: border-box;
+	background: #fff;
+	border: 2px solid #000;
+	text-align: left;
+	padding: 20px;
+}
+
+#game-container .game-info h3 {
+	text-align: center;
+	margin-top: 0;
+}
+
+#game-container .game-info button {
+	display: block;
+	margin-top: 20px;
+}
+
+#game-container #game {
+	display: none;
 	position: fixed;
 	top: 50%;
 	left: 50%;

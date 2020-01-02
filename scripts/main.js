@@ -28,7 +28,7 @@ const videoKeydownHandler = (event) => {
 	}
 };
 
-const setVideoContainer = (id, state, videoId) => {
+const setVideoContainer = (id, state, videoId, start) => {
 	const videoContainer = document.getElementById(`video-container-${id}`);
 
 	if(videoContainer) {
@@ -36,7 +36,7 @@ const setVideoContainer = (id, state, videoId) => {
 
 		if(state) {
 			// Set src if it has not been loaded yet
-			const videoSource = `https://www.youtube.com/embed/${videoId}?enablejsapi=1`;
+			const videoSource = `https://www.youtube.com/embed/${videoId}?enablejsapi=1${start ? `&start=${start}` : ''}`;
 			if(videoIframe.src !== videoSource) {
 				videoIframe.src = videoSource;
 			}
@@ -85,8 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	// Create video container if needed
-	const videoButtons = document.querySelectorAll('.video-button');
-	const main = document.getElementsByTagName('main')[0];
+	const videoButtons = document.querySelectorAll('[data-video]');
 
 	videoButtons.forEach((videoButton, i) => {
 		const videoContainer = document.createElement('div');
@@ -111,8 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			</div>
 		`;
 
-		videoButton.onclick = () => setVideoContainer(i, true, videoButton.getAttribute('data-video'));
+		videoButton.addEventListener('click', () => setVideoContainer(
+			i,
+			true,
+			videoButton.getAttribute('data-video'),
+			videoButton.getAttribute('data-video-start'),
+		));
 
-		main.parentNode.insertBefore(videoContainer, main.nextSibling);
+		document.body.appendChild(videoContainer);
 	});
 });

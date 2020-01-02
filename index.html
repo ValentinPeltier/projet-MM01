@@ -37,11 +37,29 @@
 		<div id="game-container">
 			<div id="game-overlay"></div>
 
-			<div class="game">
+			<div class="game-info">
+				<h3>Contrôles</h3>
+				<strong>Se déplacer :</strong> flèches directionnelles<br />
+				<strong>Sauter :</strong> X<br />
+				<strong>Courir :</strong> Z
+
+				<button class="button right-icon" id="game-play-button">
+					Jouer
+					<i class="fas fa-chevron-right"></i>
+				</button>
+
+				<button class="button right-icon" data-video="rLl9XBg7wSs" data-video-start="9">
+					Gameplay
+					<i class="fas fa-play"></i>
+				</button>
+			</div>
+
+			<div id="game">
 				<div id="game-close-button" title="Fermer">
 					<i class="fas fa-times"></i>
 				</div>
-				<iframe src="" width="768" height="720" frameborder="0"></iframe>
+
+				<iframe src="" width="762" height="720" frameborder="0"></iframe>
 			</div>
 		</div>
 
