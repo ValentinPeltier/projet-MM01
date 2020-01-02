@@ -1,3 +1,7 @@
+/*****************************/
+/*** Page personnages.html ***/
+/*****************************/
+
 .character {
 	display: flex;
 	flex-flow: row nowrap;
