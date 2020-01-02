@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>New Super Mario Bros - Contact</title>
+		<link rel="icon" href="favicon.ico" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+        <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="style/contact.css">
+
+        <script src="https://kit.fontawesome.com/85302b6107.js" crossorigin="anonymous"></script>
+		<script src="scripts/main.js"></script>
+		<script src="scripts/contact.js"></script>
+    </head>
+    <body>
+		<main>
+			<div class="page-content">
+				<h1>Contact</h1>
+
+				<div id="form-error"></div>
+
+				<form novalidate>
+					<div class="row">
+						<label>
+							<input name="firstname" />
+							<div class="placeholder">Prénom</div>
+						</label>
+
+						<label>
+							<input name="lastname" />
+							<div class="placeholder">Nom</div>
+						</label>
+					</div>
+
+					<div class="row">
+						<label>
+							<input type="email" name="email" />
+							<div class="placeholder">Email</div>
+						</label>
+					</div>
+
+					<div class="row">
+						<label>
+							<input name="subject" />
+							<div class="placeholder">Sujet</div>
+						</label>
+					</div>
+
+					<div class="row">
+						<label>
+							<textarea name="message"></textarea>
+							<div class="placeholder">Message</div>
+						</label>
+					</div>
+
+					<div class="row">
+						<button type="submit" class="button right-icon">
+							Envoyer
+							<i class="fas fa-paper-plane"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+		</main>
+
+		<script src="scripts/components.js"></script>
+    </body>
+</html>

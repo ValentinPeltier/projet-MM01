@@ -84,6 +84,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 	});
 
+	// Handle input placeholders
+	document.querySelectorAll('label input, label textarea').forEach((input) => {
+		const placeholder = input.parentNode.querySelector('.placeholder');
+		if(!placeholder) {
+			return;
+		}
+
+		input.addEventListener('input', (e) => {
+			if(e.target.value) {
+				placeholder.classList.add('active');
+			}
+			else {
+				placeholder.classList.remove('active');
+			}
+		});
+
+		if(input.value) {
+			placeholder.classList.add('active');
+		}
+	});
+
 	// Create video container if needed
 	const videoButtons = document.querySelectorAll('[data-video]');
 

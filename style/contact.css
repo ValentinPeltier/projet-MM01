@@ -1,0 +1,44 @@
+#form-error {
+	display: inline-block;
+	background: var(--yellow);
+	padding: 10px 20px;
+	border: 2px solid #000;
+	border-radius: 3px;
+}
+
+#form-error:empty {
+	display: none;
+}
+
+.row {
+	display: flex;
+	flex-flow: row nowrap;
+	max-width: 500px;
+	margin: 0 auto 30px auto;
+}
+
+.row:first-of-type {
+	margin-top: 40px;
+}
+
+.row label {
+	flex-grow: 1;
+}
+
+.row label:not(:first-child) {
+	margin-left: 20px;
+}
+
+textarea {
+	height: 110px;
+}
+
+@media screen and (max-width: 425px) {
+	.row {
+		flex-direction: column;
+	}
+
+	.row label:not(:first-child) {
+		margin: 30px 0 0 0;
+	}
+}
