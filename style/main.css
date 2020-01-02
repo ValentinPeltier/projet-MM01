@@ -123,6 +123,12 @@ input[type="radio"]:checked + .radio-placeholder {
 	background: var(--yellow);
 	border: 2px solid #000;
 	padding: 8px 20px;
+	transition: all .3s;
+}
+
+.button:hover,
+.button:focus {
+	filter: brightness(0.94);
 }
 
 .card {

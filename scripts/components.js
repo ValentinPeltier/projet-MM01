@@ -54,7 +54,7 @@ header.innerHTML = `
 
 const footer = document.createElement('footer');
 footer.innerHTML = `
-		<a href="secrets.html" tabindex="0">
+		<a href="secrets.html">
 			<img src="assets/images/run.webp" class="mario-run" alt="Mario">
 		</a>
 		Valentin Peltier - 2019<br>

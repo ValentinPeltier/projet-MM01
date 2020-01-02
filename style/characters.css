@@ -1,7 +1,3 @@
-/****************/
-/** Characters **/
-/****************/
-
 .character {
 	display: flex;
 	flex-flow: row nowrap;
