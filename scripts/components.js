@@ -1,5 +1,6 @@
 const header = document.createElement('header');
 header.innerHTML = `
+	<!-- Début du header -->
 	<div class="top">
 		<img src="assets/images/mario-head.png" class="mario-head" alt="Mario" />
 		<button id="menu-button">
@@ -49,16 +50,19 @@ header.innerHTML = `
 			</div>
 		</div>
 	</nav>
+	<!-- Fin du header -->
 `;
 
 
 const footer = document.createElement('footer');
 footer.innerHTML = `
+		<!-- Début du footer -->
 		<a href="secrets.html">
 			<img src="assets/images/run.webp" class="mario-run" alt="Mario">
 		</a>
 		<a href="mailto:Valentin%20Peltier<valentin.peltier@utt.fr>">Valentin Peltier</a> - 2019<br>
 		<a href="credits.html">Crédits</a> - <a href="contact.html">Contact</a>
+		<!-- Fin du footer -->
 `;
 
 document.body.prepend(header);
