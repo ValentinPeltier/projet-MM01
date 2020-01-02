@@ -57,7 +57,7 @@ footer.innerHTML = `
 		<a href="secrets.html">
 			<img src="assets/images/run.webp" class="mario-run" alt="Mario">
 		</a>
-		Valentin Peltier - 2019<br>
+		<a href="mailto:Valentin%20Peltier<valentin.peltier@utt.fr>">Valentin Peltier</a> - 2019<br>
 		<a href="credits.html">Crédits</a> - <a href="contact.html">Contact</a>
 `;
 
