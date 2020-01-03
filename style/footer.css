@@ -30,7 +30,7 @@ footer .mario-run {
 	left: -80px;
 	height: 80px;
 	animation: mario-run 30s infinite linear;
-	animation-delay: 2s;
+	animation-delay: 5s;
 }
 
 footer a {

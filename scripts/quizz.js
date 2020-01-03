@@ -184,9 +184,9 @@ const checkAnswers = () => {
 		comment = 'Pas trop mal.';
 		image = '50.png';
 	}
-	else if(score > 30) {
+	else if(score > 20) {
 		comment = 'Vous pouvez mieux faire...';
-		image = '30.png';
+		image = '20.png';
 	}
 	else {
 		comment = 'Vous avez déjà joué au jeu ?';
@@ -194,7 +194,7 @@ const checkAnswers = () => {
 	}
 
 	resultImage.src = `assets/images/quizz/${image}`;
-	result.innerHTML = `Vous avez ${score}% de bonnes réponses.<br />${comment}`;
+	result.innerHTML = `Vous avez <strong>${score}%</strong> de bonnes réponses.<br />${comment}`;
 
 	currentEntries.forEach((entry) => {
 		// Show correct answers

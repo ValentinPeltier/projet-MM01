@@ -72,7 +72,15 @@ main::before {
 
 #game-container .game-info button {
 	display: block;
-	margin-top: 20px;
+	margin: 20px auto 0 auto;
+}
+
+#game-container .game-info hr {
+	height: 2px;
+	width: 100%;
+	margin: 20px 0 14px 0;
+	background: #000;
+	border: none;
 }
 
 #game-container #game {
