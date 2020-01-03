@@ -61,7 +61,7 @@ footer.innerHTML = `
 			<img src="assets/images/run.webp" class="mario-run" alt="Mario">
 		</a>
 		<a href="mailto:Valentin%20Peltier<valentin.peltier@utt.fr>">Valentin Peltier</a> - 2019<br>
-		<a href="credits.html">Crédits</a> - <a href="contact.html">Contact</a>
+		<a href="contact.html">Contact</a> - <a href="credits.html">Crédits</a>
 		<!-- Fin du footer -->
 `;
 

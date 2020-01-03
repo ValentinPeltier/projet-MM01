@@ -36,7 +36,7 @@ const prepareEmail = () => {
 	// to be correctly interpreted
 	message = message.replace(/\r?\n/g, nl);
 
-	window.open(`mailto:Mahé%20Chaon<mahe.chaon@utt.fr>?subject=${subject}&body=${from}${nl}${nl}${message}`);
+	window.open(`mailto:Mahé%CHAON<mahe.chaon@utt.fr>?subject=${subject}&body=${from}${nl}${nl}${message}`);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
