@@ -1,0 +1,47 @@
+/**************************/
+/*** Page versions.html ***/
+/**************************/
+
+.version {
+	max-width: 700px;
+	margin: 0 auto 40px auto;
+	text-align: left;
+}
+
+.version img {
+	display: inline-block;
+	max-width: 200px;
+	max-height: 250px;
+}
+
+.version .stats {
+	display: inline-block;
+	box-sizing: border-box;
+	width: calc(100% - 204px);
+	padding: 20px;
+	vertical-align: top;
+}
+
+.version .stats h2 {
+	margin-top: 0;
+}
+
+.version .description {
+	padding: 0 20px 20px 20px;
+}
+
+.version .description p {
+	margin-bottom: 0;
+}
+
+@media screen and (max-width: 560px) {
+	.version img {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.version .stats {
+		display: block;
+		width: unset;
+	}
+}
