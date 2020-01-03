@@ -31,6 +31,14 @@
 	display: block;
 }
 
+.question .question-link {
+	margin-top: 20px;
+}
+
+.question .question-link i {
+	margin-right: 6px;
+}
+
 .question .correct-answer {
 	color: var(--green);
 	font-weight: bold;

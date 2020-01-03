@@ -1,33 +1,120 @@
-const entriesCount = 3; // Choose the number of questions in the quizz
+const entriesCount = 5; // Choose the number of questions in the quizz
 
 const quizzEntries = [
 	{
-		question: 'Question 1',
+		question: 'Dans New Super Mario Bros. Wii, que se passe-t-il lorsqu\'on a 99 vies ?',
 		answers: [
-			'Réponse 1.1',
-			'Réponse 1.2',
-			'Réponse 1.3',
+			'La voix de Mario change',
+			'Mario perd sa casquette',
+			'Un passage vers le monde 9 apparaît',
+			'Il ne se passe rien',
+		],
+		correct: 1,
+		link: 'https://youtu.be/6SnHtjfi2f4?t=2792',
+	},
+	{
+		question: 'Dans New Super Mario Bros. Wii, que peut faire Toad rouge ?',
+		answers: [
+			'Servir de projectile',
+			'Lancer des boules de feu',
+			'Se faire contrôler par le joueur',
+			'Se faire porter',
+		],
+		correct: 3,
+		link: 'https://youtu.be/6SnHtjfi2f4?t=2659',
+	},
+	{
+		question: 'En quelle année Mario est-il apparu pour la première fois ?',
+		answers: [
+			'1980',
+			'1981',
+			'1985',
+			'1989',
+		],
+		correct: 1,
+		link: 'personnages.html',
+	},
+	{
+		question: 'Quel est le lien de parenté entre Luigi et Mario ?',
+		answers: [
+			'Luigi est le grand frère de Mario',
+			'Luigi est le petit frère de Mario',
+			'Ils n\'ont pas de lien de parenté',
+		],
+		correct: 1,
+		link: 'https://en.wikipedia.org/wiki/Luigi#Characteristics',
+	},
+	{
+		question: 'Quel est le prénom de la première copine de Mario ?',
+		answers: [
+			'Daisy',
+			'Peach',
+			'Pauline',
+			'Rosy',
+			'Sunny',
+		],
+		correct: 2,
+		link: 'https://fr.wikipedia.org/wiki/Personnages_de_Mario#Pauline',
+	},
+	{
+		question: 'Comment s\'appelle le dinosaure vert ?',
+		answers: [
+			'Bowser',
+			'Toad',
+			'Goomba',
+			'Yoshi',
+		],
+		correct: 3,
+		link: 'personnages.html',
+	},
+	{
+		question: 'Comment s\'appelle le personnage qui a un champignon sur la tête ?',
+		answers: [
+			'Koopa',
+			'Topi Taupe',
+			'Toad',
+		],
+		correct: 2,
+		link: 'personnages.html',
+	},
+	{
+		question: 'Mario a inventé par...',
+		answers: [
+			'Sega',
+			'Ubisoft',
+			'EA',
+			'Aucun des trois'
+		],
+		correct: 3,
+		link: 'https://fr.wikipedia.org/wiki/Mario_(personnage)',
+	},
+	{
+		question: 'Comment faut-il faire pour accéder aux mondes 4 et 7 ?',
+		answers: [
+			'En devenant géant',
+			'En empruntant un passage secret',
+			'En devant petit',
+		],
+		correct: 2,
+		link: 'https://youtu.be/aJfq3b1uFB8?t=279',
+	},
+	{
+		question: 'Quels personnages sont jouables ?',
+		answers: [
+			'Mario, Luigi, Toad, Yoshi',
+			'Mario, Luigi, Wario, Yoshi',
+			'Mario, Luigi, Wario, Waluigi',
 		],
 		correct: 0,
 	},
 	{
-		question: 'Question 2',
+		question: 'New Super Mario Bros. a reçu de très bonnes critiques.',
 		answers: [
-			'Réponse 2.1',
-			'Réponse 2.2',
+			'Vrai',
+			'Faux',
 		],
-		correct: 1,
-	},
-	{
-		question: 'Question 3',
-		answers: [
-			'Réponse 3.1',
-			'Réponse 3.2',
-			'Réponse 3.3',
-			'Réponse 3.4',
-			'Réponse 3.5',
-		],
-		correct: 2,
+		correct: 0,
+		link: 'https://fr.wikipedia.org/wiki/New_Super_Mario_Bros.#Critiques',
 	},
 ];
 
@@ -109,10 +196,16 @@ const checkAnswers = () => {
 	resultImage.src = `assets/images/quizz/${image}`;
 	result.innerHTML = `Vous avez ${score}% de bonnes réponses.<br />${comment}`;
 
-	// Show correct answers
 	currentEntries.forEach((entry) => {
+		// Show correct answers
 		const answer = document.querySelector(`input[name="question${entry.id}"][value="${entry.correct}"] + div + span`);
 		answer.classList.add('correct-answer');
+
+		// Show links
+		const link = document.querySelector(`#question${entry.id} .question-link`);
+		if(link) {
+			link.style.display = 'inline-block';
+		}
 	});
 
 	// Display result container
@@ -154,10 +247,10 @@ const generateEntries = () => {
 	const usedIndexes = [];
 
 	for(let i = 0; i < entriesCount; i++) {
-		// Generate a random integer between 0 and entriesCount (excluded)
+		// Generate a random integer between 0 and quizzEntries.length (excluded)
 		let randomIndex = null;
 		do {
-			randomIndex = Math.floor(Math.random() * entriesCount);
+			randomIndex = Math.floor(Math.random() * quizzEntries.length);
 		} while(usedIndexes.includes(randomIndex));
 
 		currentEntries.push({
@@ -193,6 +286,19 @@ const generateEntries = () => {
 			<div id="question${entry.id}" class="question" style="left: ${entryIndex * 100}%">
 				<h2>${entry.question}</h2>
 				${answers}
+				${entry.link ? `
+					<div class="question-link" style="display: none">
+						<i class="fas fa-angle-right"></i>
+						<a
+							class="link"
+							href="${entry.link}"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Pour plus d'informations, cliquez ici.
+						</a>
+					</div>
+				` : ''}
 			</div>
 		`;
 	});
