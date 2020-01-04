@@ -1,0 +1,13 @@
+/**************************/
+/*** Page objectif.html ***/
+/**************************/
+
+.map {
+	width: 640px;
+	margin: 0 auto 30px auto;
+}
+
+.description {
+	max-width: 600px;
+	padding: 20px;
+}
