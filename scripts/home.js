@@ -1,8 +1,16 @@
+const setGameInfo = (state) => {
+	const gameInfo = document.getElementById('game-info');
+	gameInfo.style.display = state ? 'block' : 'none';
+};
+
 const setGameContainer = (state) => {
 	const gameContainer = document.getElementById('game-container');
 	gameContainer.style.display = state ? 'block' : 'none';
 
-	if(!state) {
+	if(state) {
+		setGameInfo(true);
+	}
+	else {
 		setGame(false);
 	}
 };
@@ -15,6 +23,8 @@ const setGame = (state) => {
 	gameIframe.src = state ? 'game.html' : '';
 
 	if(state) {
+		setGameInfo(false);
+
 		// Focus iframe when loaded
 		gameIframe.onload = () => gameIframe.contentWindow.focus();
 	}
