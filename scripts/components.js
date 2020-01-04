@@ -2,7 +2,9 @@ const header = document.createElement('header');
 header.innerHTML = `
 	<!-- Début du header -->
 	<div class="top">
-		<img src="assets/images/mario-head.png" class="mario-head" alt="Mario" />
+		<a href="index.html">
+			<img src="assets/images/mario-head.png" class="mario-head" alt="Mario" />
+		</a>
 		<button id="menu-button">
 			<div></div>
 			<div></div>

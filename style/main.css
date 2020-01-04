@@ -19,7 +19,6 @@ html {
 	--placeholder-color: #ffffff8c;
 	--card-color: #ffffffa1;
 	--radio: #aaa;
-	--breath: breath 2s infinite;
 }
 
 body {
@@ -315,16 +314,6 @@ a.link:focus::before {
 
 	main::before {
 		top: 66px;
-	}
-}
-
-@keyframes breath {
-	0% {
-		transform: scale(1);
-	}
-
-	50% {
-		transform: scale(1.1);
 	}
 }
 

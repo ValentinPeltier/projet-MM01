@@ -75,11 +75,6 @@ header .top #audio-button {
 	width: 40px;
 }
 
-header .top #audio-button:hover,
-header .top #audio-button:focus {
-	animation: var(--breath);
-}
-
 header .top #audio-button .audio-icon {
     position: absolute;
     top: 50%;

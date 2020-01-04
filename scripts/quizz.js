@@ -99,7 +99,7 @@ const quizzEntries = [
 		link: 'https://youtu.be/aJfq3b1uFB8?t=279',
 	},
 	{
-		question: 'Quels personnages sont jouables ?',
+		question: 'Quels personnages sont jouables dans New Super Mario Bros. Wii ?',
 		answers: [
 			'Mario, Luigi, Toad, Yoshi',
 			'Mario, Luigi, Wario, Yoshi',

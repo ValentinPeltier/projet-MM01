@@ -16,9 +16,8 @@ const prepareEmail = () => {
 	if(!firstname.trim() || !lastname.trim() || !email.trim() || !subject.trim() || !message.trim()) {
 		error = 'Veuillez remplir tous les champs.';
 	}
-
 	// Test email
-	if(!emailRegex.test(email)) {
+	else if(!emailRegex.test(email)) {
 		error = 'Veuillez fournir une adresse email valide.';
 	}
 
