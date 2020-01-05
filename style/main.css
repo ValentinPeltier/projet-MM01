@@ -151,6 +151,10 @@ p {
 	text-align: justify;
 }
 
+iframe {
+	border: none;
+}
+
 input[type="radio"] {
 	display: none;
 }
