@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
 /**************************/
 /*** Page versions.html ***/
 /**************************/
@@ -16,7 +18,8 @@
 
 .version .stats {
 	display: inline-block;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	width: calc(100% - 204px);
 	padding: 20px;
 	vertical-align: top;

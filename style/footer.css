@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
 /********************/
 /*** Pied de page ***/
 /********************/
@@ -29,13 +31,21 @@ footer .mario-run {
 	bottom: 0;
 	left: -80px;
 	height: 80px;
-	animation: mario-run 30s infinite linear;
-	animation-delay: 5s;
+	-webkit-animation: mario-run 30s infinite linear;
+	        animation: mario-run 30s infinite linear;
+	-webkit-animation-delay: 5s;
+	        animation-delay: 5s;
 }
 
 footer a {
 	color: #000;
 	text-decoration: none;
+}
+
+@-webkit-keyframes mario-run {
+	20%, 100% {
+		left: 100%;
+	}
 }
 
 @keyframes mario-run {

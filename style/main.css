@@ -1,5 +1,7 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
 /*****************************************/
-/*** Style appliqué à toutes les pages ***/
+/*** Style appliqué �  toutes les pages ***/
 /*****************************************/
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
@@ -76,6 +78,8 @@ textarea {
 	font-size: 1em;
 	font-family: inherit;
 	outline: none;
+	-webkit-transition: all .3s;
+	-o-transition: all .3s;
 	transition: all .3s;
 }
 
@@ -86,7 +90,8 @@ textarea {
 
 input:focus,
 textarea:focus {
-	box-shadow: 0 3px 0 0 var(--yellow);
+	-webkit-box-shadow: 0 3px 0 0 var(--yellow);
+	        box-shadow: 0 3px 0 0 var(--yellow);
 }
 
 input + .placeholder,
@@ -96,6 +101,8 @@ textarea + .placeholder {
 	top: 10px;
 	color: #5e5e5e;
 	cursor: text;
+	-webkit-transition: all .3s;
+	-o-transition: all .3s;
 	transition: all .3s;
 }
 
@@ -107,7 +114,9 @@ textarea + .placeholder.active {
 	color: #000;
 	top: -2px;
 	left: 2px;
-	transform: translateY(-100%);
+	-webkit-transform: translateY(-100%);
+	    -ms-transform: translateY(-100%);
+	        transform: translateY(-100%);
 }
 
 main {
@@ -138,7 +147,9 @@ noscript {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	background: #f00;
 	color: #fff;
 	font-size: 2em;
@@ -173,7 +184,8 @@ input[type="radio"]:checked + .radio-placeholder {
 	background: var(--yellow);
 	border: 2px solid #000;
 	border-radius: 50%;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 .button {
@@ -181,18 +193,22 @@ input[type="radio"]:checked + .radio-placeholder {
 	border: 2px solid #000;
 	padding: 8px 20px;
 	cursor: pointer;
+	-webkit-transition: all .3s;
+	-o-transition: all .3s;
 	transition: all .3s;
 }
 
 .button:hover,
 .button:focus {
-	filter: brightness(0.94);
+	-webkit-filter: brightness(0.94);
+	        filter: brightness(0.94);
 }
 
 .card {
 	margin: 0 auto 40px auto;
 	background: var(--card-color);
-	box-shadow: 0 2px 5px #0004;
+	-webkit-box-shadow: 0 2px 5px #0004;
+	        box-shadow: 0 2px 5px #0004;
 }
 
 a.link {
@@ -214,6 +230,8 @@ a.link::before {
 	height: 0;
 	background: var(--yellow);
 	z-index: -1;
+	-webkit-transition: all .3s;
+	-o-transition: all .3s;
 	transition: all .3s;
 }
 
@@ -243,6 +261,8 @@ a.link:focus::before {
 .video-container.active {
 	visibility: visible;
 	opacity: 1;
+	-webkit-transition: all .3s;
+	-o-transition: all .3s;
 	transition: all .3s;
 }
 
@@ -257,7 +277,9 @@ a.link:focus::before {
 .video-container .video-margin {
 	position: relative;
 	top: 50%;
-	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	        transform: translateY(-50%);
 	width: 800px;
 	max-width: calc(100vw - 20px);
 	margin: 0 auto;
@@ -267,7 +289,9 @@ a.link:focus::before {
 	position: absolute;
 	top: -10px;
 	right: 0;
-	transform: translateY(-100%);
+	-webkit-transform: translateY(-100%);
+	    -ms-transform: translateY(-100%);
+	        transform: translateY(-100%);
 	background: var(--yellow);
 	border: 2px solid #000;
 	padding: 10px 15px;
@@ -286,13 +310,16 @@ a.link:focus::before {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	width: 100px;
 	height: 100px;
 	border: 10px solid transparent;
 	border-top: 10px solid #fff;
 	border-radius: 50%;
-	animation: spin-center 1.4s linear infinite;
+	-webkit-animation: spin-center 1.4s linear infinite;
+	        animation: spin-center 1.4s linear infinite;
 }
 
 .video-ratio > iframe {
@@ -321,12 +348,26 @@ a.link:focus::before {
 	}
 }
 
-@keyframes spin-center {
+@-webkit-keyframes spin-center {
 	0% {
-		transform: translate(-50%, -50%) rotate(0deg);
+		-webkit-transform: translate(-50%, -50%) rotate(0deg);
+		        transform: translate(-50%, -50%) rotate(0deg);
 	}
 
 	100% {
-		transform: translate(-50%, -50%) rotate(360deg);
+		-webkit-transform: translate(-50%, -50%) rotate(360deg);
+		        transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+@keyframes spin-center {
+	0% {
+		-webkit-transform: translate(-50%, -50%) rotate(0deg);
+		        transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: translate(-50%, -50%) rotate(360deg);
+		        transform: translate(-50%, -50%) rotate(360deg);
 	}
 }
